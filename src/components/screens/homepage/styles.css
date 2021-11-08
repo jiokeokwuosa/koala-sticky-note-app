@@ -1,0 +1,85 @@
+#stickyArea form{
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+}
+#stickyArea form textarea{
+    resize: none;
+    border: 1px solid rgb(157, 173, 133);
+    min-width: 100%;
+    max-width: 100%;
+    outline: none;
+    height: 100px;
+    padding: 10px;
+}
+#stickyArea form input[type="submit"], #stickyArea button, label{
+    border: none;
+    padding: 10px;
+    outline: none;  
+    background-color: #6eb39e; 
+    color: white; 
+}
+#stickyArea button, #stickyArea label {
+    background: rgb(207, 94, 94) !important;
+    width: 50%;
+    text-align: center;
+}
+#stickyArea label {
+    background: rgb(43, 95, 75) !important;   
+}
+#stickyArea form input[type="submit"]:hover{    
+    background-color: #077c59;  
+}
+#stickyArea .noteBox{    
+    position: absolute;
+    top: 30px;
+    left: 250px;
+    height: 200px;
+    width:200px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: white;
+    overflow-y: auto;
+}
+#stickyArea .noteBox .noteText{
+    width: 100%;
+    white-space: pre-wrap;   
+}
+#stickyArea .noteBox .optionArea{  
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #769189;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: white; 
+    display: none;   
+}
+#stickyArea .option2{
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+}
+#stickyArea .option2 button{
+    justify-content: center;
+}
+#stickyArea .noteBox .optionArea div{
+   flex: 1;
+   height: 100%;
+   text-align: center;
+   padding: 9px;
+}
+
+#stickyArea .noteBox .optionArea svg {
+    vertical-align: middle;
+    width: 17px;
+}
+
+#stickyArea .noteBox:hover .optionArea{    
+   display: flex;
+}
+
+@media screen and (max-width: 768px) { 
+   
+}

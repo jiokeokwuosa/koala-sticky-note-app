@@ -1,0 +1,80 @@
+html,
+body {
+    font-family: monospace !important;  
+    height: 100vh;
+    background: linear-gradient(to right, #769189, #077c59) !important;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+a {    
+    text-decoration: none;
+    background-color: inherit !important;
+    color:inherit;
+}
+.gold{
+  background-color: #ac9b3b !important;
+}
+.pink{
+  background-color: #96406e !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.off{
+  display: none;
+}
+canvas{
+  margin-top: 40px;
+}
+.noteModal .modal-content {
+  padding: 0px;
+  background-color: white;
+  color: #222222;
+}
+.modal-dialog.noteModal {
+  max-width: 367px;
+  margin: 1.75rem auto;
+}
+.noteModal .modal-title {   
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+.noteModal .modal-header {   
+    color: white !important;
+    background: #077c59;
+    padding: 16px 3px !important;
+    text-align: center;
+}
+.noteModal textarea
+{
+    border: solid 1px rgba(73, 73, 73, 0.6);
+    padding: 12px 8px;
+    background: transparent;
+    width: 100%;
+    margin-top: 20px;
+}
+.noteModal input[type='submit'] {
+  width: 37%;
+  padding: 10px 3px;    
+  background: linear-gradient(to right, #2bb58e, #077c59) !important;
+  color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+}
+.noteModal .modal-body {
+  padding: 30px;
+}
+
+
+@media screen and (max-width: 768px) {  
+  .h3, h3 {
+      font-size: 1.35rem;
+  }
+}
