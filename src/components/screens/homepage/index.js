@@ -51,8 +51,8 @@ const StickyApp = () => {
           image.onload = function(ev){
             let canvas = document.getElementById('canvas')
             let context = canvas.getContext('2d');
-            canvas.width = 300;
-            canvas.height = 300;           
+            canvas.width = image.width;
+            canvas.height = image.height;           
             context.drawImage(image,0,0)
           }
         }
