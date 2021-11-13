@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNote, clearAllNotes } from './../../../redux/actions/noteActions';
 import NoteBox from '../../includes/noteItem';
+import DrawCanvas from '../../includes/drawCanvas';
 import './styles.css';
 
 const StickyApp = () => {
   const dispatch = useDispatch();
   const [noteItem, setNoteItem] = useState('');
   const noteList = useSelector(state=>state.note.noteList)
+  const [activateDrawCanvas, setActivateDrawCanvas] = useState(false);
 
   const handleAddNote = (e) =>{
     e.preventDefault()
@@ -48,8 +50,9 @@ const StickyApp = () => {
         reader.onloadend = function (e){
           let image = new Image();
           image.src = e.target.result;
+          image.draggable = "true";
           image.onload = function(ev){
-            let canvas = document.getElementById('canvas')
+            let canvas = document.getElementById('imageCanvas')
             let context = canvas.getContext('2d');
             canvas.width = image.width;
             canvas.height = image.height;           
@@ -60,25 +63,38 @@ const StickyApp = () => {
       
   }
 
+  const toggleDrawCanvasView = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setActivateDrawCanvas(!activateDrawCanvas)
+  }
+
   return (
     <>
-      <div id="stickyArea" onDragOver={handleDragOver}>   
-        <form onSubmit={handleAddNote}>
-          <textarea placeholder="Take a note..." value={noteItem} onChange={e=>setNoteItem(e.target.value)}>
+     {activateDrawCanvas?
+        <DrawCanvas toggleCanvas={toggleDrawCanvasView}/>  
+        :
+        <div id="stickyArea" onDragOver={handleDragOver}>  
+          <div className="formArea">
+            <form onSubmit={handleAddNote}>
+              <textarea placeholder="Take a note..." value={noteItem} onChange={e=>setNoteItem(e.target.value)}>
 
-          </textarea>
-          <input type="submit" value="Add Note"/>
-          <div className="option2">
-            <button onClick={handleClearAllNotes}>Clear All</button>
-            <input type="file" id="imageUpload" className="off" onChange={uploadImageToCanvas} accept = "image/*"/>
-            <label htmlFor="imageUpload">Upload</label>
-            <canvas id= "canvas"></canvas>
-          </div>
-         
+              </textarea>
+              <div className="option1">
+                <input type="submit" value="Add Note"/>
+                <button onClick={toggleDrawCanvasView}>Draw</button>
+              </div>             
+            </form>
+            <div className="option2">
+              <button onClick={handleClearAllNotes}>Clear All</button>
+              <input type="file" id="imageUpload" className="off" onChange={uploadImageToCanvas} accept = "image/*"/>
+              <label htmlFor="imageUpload">Upload</label>         
+            </div>
+          </div>          
           {handleNoteList()}
-        </form>     
-      </div>          
-        
+          <canvas id= "imageCanvas"> </canvas> 
+        </div>  
+      }
     </>
   );
 }

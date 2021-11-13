@@ -18,6 +18,7 @@
     outline: none;  
     background-color: #6eb39e; 
     color: white; 
+    width:50%;
 }
 #stickyArea button, #stickyArea label {
     background: rgb(207, 94, 94) !important;
@@ -27,8 +28,11 @@
 #stickyArea label {
     background: rgb(43, 95, 75) !important;   
 }
-#stickyArea form input[type="submit"]:hover{    
+#stickyArea form input[type="submit"]:hover, .drawCanvasOptions button:hover{    
     background-color: #077c59;  
+}
+#stickyArea button:hover{    
+    background: rgb(148, 8, 8) !important; 
 }
 #stickyArea .noteBox{    
     position: absolute;
@@ -56,10 +60,13 @@
     color: white; 
     display: none;   
 }
-#stickyArea .option2{
+#stickyArea .option2, #stickyArea .option1{
     flex-direction: row;
     flex: 1;
     width: 100%;
+}
+.formArea{
+    width: 210px;
 }
 #stickyArea .option2 button{
     justify-content: center;
@@ -78,6 +85,34 @@
 
 #stickyArea .noteBox:hover .optionArea{    
    display: flex;
+}
+#canvas {
+    background: white;
+    margin: auto;
+    text-align: center; 
+    display: block;
+    /* width: 60%; */
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 7px;
+}
+.drawCanvasOptions{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: center;
+    margin-top: 20px;    
+}
+.drawCanvasOptions button{
+    border: none;
+    padding: 10px 15px;
+    outline: none;  
+    background-color: #6eb39e; 
+    color: white; 
+    margin-left: 10px;    
+}
+.drawCanvasOptions select{
+    padding: 6px 10px;
+    border: none;
 }
 
 @media screen and (max-width: 768px) { 
