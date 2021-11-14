@@ -9,10 +9,23 @@ const NoteBox = (props) => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [newNoteItem, setNewNoteItem] = useState('')
   const [itemColor, setItemColor] = useState('')
+  
+  const getMousePoint = (ex, ey)=>{
+    let offsetX = 0
+    let offsetY = 0;
+
+    const canvasElement = document.getElementById('body');   
+    offsetX += canvasElement.offsetLeft;
+    offsetY += canvasElement.offsetTop;
+
+    return {x: ex-offsetX,y: ey-offsetY};  
+
+  }
 
   const handleDragEnd = (e) =>{
-    e.target.style.left = `${e.pageX - 50}px`;
-    e.target.style.top = `${e.pageY - 50}px`;
+    const actualMousePoint = getMousePoint(e.pageX,e.pageY)
+    e.target.style.left = `${actualMousePoint.x}px`;
+    e.target.style.top = `${actualMousePoint.y}px`;
   }
 
   const toggleModal = ()=>{  

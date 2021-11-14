@@ -9,7 +9,6 @@ const StickyApp = () => {
   const dispatch = useDispatch();
   const [noteItem, setNoteItem] = useState('');
   const noteList = useSelector(state=>state.note.noteList)
-  const [activateDrawCanvas, setActivateDrawCanvas] = useState(false);
 
   const handleAddNote = (e) =>{
     e.preventDefault()
@@ -63,39 +62,27 @@ const StickyApp = () => {
       
   }
 
-  const toggleDrawCanvasView = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setActivateDrawCanvas(!activateDrawCanvas)
-  }
-
   return (
-    <>
-     {activateDrawCanvas?
-        <DrawCanvas toggleCanvas={toggleDrawCanvasView}/>  
-        :
-        <div id="stickyArea" onDragOver={handleDragOver}>  
-          <div className="formArea">
-            <form onSubmit={handleAddNote}>
-              <textarea placeholder="Take a note..." value={noteItem} onChange={e=>setNoteItem(e.target.value)}>
+    <div id="stickyArea" onDragOver={handleDragOver}>  
+      <div className="formArea">
+        <form onSubmit={handleAddNote}>
+          <textarea placeholder="Take a note..." value={noteItem} onChange={e=>setNoteItem(e.target.value)}>
 
-              </textarea>
-              <div className="option1">
-                <input type="submit" value="Add Note"/>
-                <button onClick={toggleDrawCanvasView}>Draw</button>
-              </div>             
-            </form>
-            <div className="option2">
-              <button onClick={handleClearAllNotes}>Clear All</button>
-              <input type="file" id="imageUpload" className="off" onChange={uploadImageToCanvas} accept = "image/*"/>
-              <label htmlFor="imageUpload">Upload</label>         
-            </div>
-          </div>          
-          {handleNoteList()}
-          <canvas id= "imageCanvas"> </canvas> 
-        </div>  
-      }
-    </>
+          </textarea>
+          <div className="option1">
+            <input type="submit" value="Add Note"/>         
+          </div>             
+        </form>
+        <div className="option2">
+          <button onClick={handleClearAllNotes}>Clear All</button>
+          <input type="file" id="imageUpload" className="off" onChange={uploadImageToCanvas} accept = "image/*"/>
+          <label htmlFor="imageUpload">Upload</label>         
+        </div>
+      </div>   
+      <DrawCanvas/>         
+      {handleNoteList()}
+      <canvas id= "imageCanvas"> </canvas> 
+    </div> 
   );
 }
 

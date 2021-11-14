@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback }  from 'react';
 
-const DrawCanvas = (props) => {
-   const {toggleCanvas} = props
+const DrawCanvas = () => {
    const canvasRef = useRef(null)
    const ctx = useRef(null)
 
@@ -88,6 +87,7 @@ const DrawCanvas = (props) => {
 
    return (
     <>
+      <h4>Draw on the canvas</h4>
       <canvas id="canvas" 
         ref={canvasRef}
         onMouseUp={handleOnMouseUp}
@@ -99,14 +99,13 @@ const DrawCanvas = (props) => {
       >
         Sorry, Canvas is not supported in your browser. please update your browser
       </canvas>
-      <div className="option2 drawCanvasOptions">       
+      <div className="drawCanvasOptions">       
         <select name='selectedColor' onChange={e=>setSelectedColor(e.target.value)} defaultValue={selectedColor}>
           <option value="black">Select Color</option>
           {drawColor.map((color, index)=><option value={color} key={index}>{color}</option>)}
         </select>
-        <button onClick = {handleClearCanvas}>Clear Canvas</button>
-        <button onClick = {handleDownload}>Download</button>
-        <button onClick = {toggleCanvas}>Go Back</button>
+        <button className="clear" onClick = {handleClearCanvas}>Clear Canvas</button>
+        <button className="download" onClick = {handleDownload}>Download</button>       
       </div> 
     </>
   );

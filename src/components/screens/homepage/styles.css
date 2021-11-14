@@ -20,18 +20,21 @@
     color: white; 
     width:50%;
 }
-#stickyArea button, #stickyArea label {
+#stickyArea form input[type="submit"]{
+    width:100% !important;
+}
+.formArea button, #stickyArea label, button.clear {
     background: rgb(207, 94, 94) !important;
     width: 50%;
     text-align: center;
 }
-#stickyArea label {
+#stickyArea label, button.download {
     background: rgb(43, 95, 75) !important;   
 }
-#stickyArea form input[type="submit"]:hover, .drawCanvasOptions button:hover{    
+#stickyArea form input[type="submit"]:hover, .drawCanvasOptions button:hover, button.download:hover{    
     background-color: #077c59;  
 }
-#stickyArea button:hover{    
+#stickyArea .formArea button:hover, button.clear:hover {    
     background: rgb(148, 8, 8) !important; 
 }
 #stickyArea .noteBox{    
@@ -44,6 +47,7 @@
     cursor: pointer;
     background-color: white;
     overflow-y: auto;
+    border: dotted 2px lightgrey;
 }
 #stickyArea .noteBox .noteText{
     width: 100%;
@@ -67,6 +71,7 @@
 }
 .formArea{
     width: 210px;
+    position: absolute;
 }
 #stickyArea .option2 button{
     justify-content: center;
@@ -98,9 +103,12 @@
 .drawCanvasOptions{
     display: flex;
     flex-direction: row;
-    width:100%;
+    width:40%;
     justify-content: center;
-    margin-top: 20px;    
+    margin:auto;
+    margin-top: 10px; 
+    text-align: center;
+       
 }
 .drawCanvasOptions button{
     border: none;
@@ -108,7 +116,7 @@
     outline: none;  
     background-color: #6eb39e; 
     color: white; 
-    margin-left: 10px;    
+    margin-left: 50px;    
 }
 .drawCanvasOptions select{
     padding: 6px 10px;

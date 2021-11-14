@@ -1,12 +1,12 @@
 html,
 body {
     font-family: monospace !important;  
-    height: 100vh;
+    /* height: 100vh; */
     background: linear-gradient(to right, #769189, #077c59) !important;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 a {    
@@ -70,6 +70,11 @@ canvas{
 }
 .noteModal .modal-body {
   padding: 30px;
+}
+h4 {
+  text-align: center;
+  margin-top: 10px !important;
+  color: white;
 }
 
 
