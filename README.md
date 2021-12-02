@@ -1,5 +1,4 @@
-# KOALA
-Tired of working on soulless corporate projects? Come spark passion in kids minds with us at Koala, the remote learning platform half way between Roblox and Zoom...
+# Sticky Note App/ Drawing Pad
 
 ## Features
 
