@@ -10,6 +10,10 @@ Tired of working on soulless corporate projects? Come spark passion in kids mind
 - Clear the canvas of all sticky notes.
 - Color: Add ability to change the color of a sticky note
 - Images: Add ability to upload images to the canvas.
+- Ability to draw on the canvas
+- Ability to draw with color
+- Ability to download the drawing
+- Ability to clear the drawing
 
 ## Technologies
 
@@ -33,6 +37,7 @@ $ npm start
 ```
 
 ## UI
+![Screenshot (416)](https://user-images.githubusercontent.com/33726993/144513523-cff249be-3166-49a0-bad6-a857ffb76c77.png)
 ![Screenshot (356)](https://user-images.githubusercontent.com/33726993/140674480-07dcfacc-3bff-4694-9d60-5a1923e7464a.png)
 ![Screenshot (357)](https://user-images.githubusercontent.com/33726993/140674484-2ec2bb4a-e15e-4b68-820a-6acb56c0dd1d.png)
 ![Screenshot (358)](https://user-images.githubusercontent.com/33726993/140674487-a2894683-304f-423a-90ae-fd34534007ac.png)
